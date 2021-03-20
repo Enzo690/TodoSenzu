@@ -13,11 +13,11 @@ class AccueilController {
     }
 
 
-
     public function accueil() {
         $lists = $this->list->getLists();
         $vue = new Vue("Accueil");
         $vue->generer(array('lists' => $lists));
     }
+
 
 }

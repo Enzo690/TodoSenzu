@@ -31,9 +31,9 @@ abstract class Model {
     private function getBdd() {
         if ($this->bdd == null) {
             // Création de la connexion
-            $this->bdd = new PDO('mysql:host=localhost;dbname=todo;charset=utf8',
-                    'root', '',
-                    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->bdd = new PDO('sqlite:'.dirname(__FILE__).'./database.sqlite');
+            $this->bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         return $this->bdd;
     }

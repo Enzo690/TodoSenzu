@@ -15,17 +15,12 @@
 <body>
 <header  class="bg-blue-500 text-white text-center">
     <h1><?= $titre ?></h1>
+    <nav>
+        <a href="?action=add">Ajouter</a>
+    </nav>
 </header>
-
-    <?php if (isset($_SESSION['id'])) {
-        echo 'connecté !!!!';
-    }else{
-        echo 'jkqifhoeo';
-    } ?>
     <div id="contenu">
         <?php echo $contenu ?>
     </div> <!-- #contenu -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./Contenu/login.js"></script>
     </body>
 </html>
