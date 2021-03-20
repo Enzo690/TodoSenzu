@@ -16,6 +16,12 @@ class TaskController {
         $vue->generer(array());
     }
 
+    public function get() {
+        $lists = $this->list->getLists();
+        $vue = new Vue("Get");
+        $vue->generer(array('lists' => $lists));
+    }
+
     public function add() {
         $this->list->ajouterList($_POST['name']);
     }

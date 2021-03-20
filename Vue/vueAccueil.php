@@ -1,14 +1,20 @@
-<?php
 
-while($list = $lists->fetch()){
-    var_dump($list);
-}
 
+
+<?php 
+
+    while ($list = $lists->fetch()) {
+        echo(json_encode($list)) ;
+    }
+       
 ?>
-
-<div class="todo">
-
-</div>
-
 <script>
+
+fetch("localhost/TodoList/?action=get")
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+});
+
+
 </script>

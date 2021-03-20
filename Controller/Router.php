@@ -22,6 +22,10 @@ class Router {
 
             if ($_GET['action'] == 'store') {
                 $this->ctrlTask->add();
+                header('Location: http://localhost/TodoList/');
+            }
+            if ($_GET['action'] == 'get') {
+                $this->ctrlTask->get();
             }
             
         } 
